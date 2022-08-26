@@ -1,8 +1,8 @@
 import StatsItem from './StatsItem';
 
 const StatsListArray = [
-  { title: 'Скорость', measure: ' зн./мин' },
-  { title: 'Точность', measure: '%' },
+  { title: 'Скорость', property: 'speed', measure: ' зн./мин' },
+  { title: 'Точность', property: 'accuracy', measure: '%' },
 ];
 
 const StatsList = () => {
