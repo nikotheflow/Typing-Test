@@ -32,7 +32,8 @@ const Text = () => {
         }
 
         dispatch(countAccuracy());
-        dispatch(countSpeed());
+
+        if (currentIndex > 10) dispatch(countSpeed());
       }
     };
 
