@@ -1,6 +1,7 @@
 import StatsItem from './StatsItem';
 
 const StatsListArray = [
+  { title: 'Время', property: 'totalTime', measure: ' мс' },
   { title: 'Скорость', property: 'speed', measure: ' зн./мин' },
   { title: 'Точность', property: 'accuracy', measure: '%' },
 ];

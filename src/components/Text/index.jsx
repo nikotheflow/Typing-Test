@@ -3,7 +3,13 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
-import { correct, wrong, countAccuracy } from '../../redux/slices/typingSlice';
+import {
+  correct,
+  wrong,
+  setStartTime,
+  countAccuracy,
+  countSpeed,
+} from '../../redux/slices/typingSlice';
 
 const Text = () => {
   const text = useSelector((state) => state.typing.text);
@@ -17,6 +23,8 @@ const Text = () => {
 
     const onKeydown = (e) => {
       if (e.key != 'Shift') {
+        if (currentIndex === 0) dispatch(setStartTime());
+
         if (currentSymbol === e.key) {
           dispatch(correct());
         } else {
@@ -24,6 +32,7 @@ const Text = () => {
         }
 
         dispatch(countAccuracy());
+        dispatch(countSpeed());
       }
     };
 
