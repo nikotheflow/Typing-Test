@@ -10,7 +10,7 @@ const initialState = {
   startTime: 0,
   totalTime: 0,
   speed: 0,
-  accuracy: 0,
+  accuracy: '0.00',
 };
 
 export const typingSlice = createSlice({

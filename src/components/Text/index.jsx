@@ -51,7 +51,7 @@ const Text = () => {
 
           dispatch(countAccuracy());
 
-          if (currentIndex > 10) dispatch(countSpeed());
+          if (currentIndex > 0) dispatch(countSpeed());
         }
       };
 
@@ -66,23 +66,25 @@ const Text = () => {
   }, [currentIndex, isLoading]);
 
   return (
-    <p className="typing-test__text">
-      {text.split('').map((symbol, id) => (
-        <span
-          key={id}
-          className={
-            id === currentIndex
-              ? isCorrect
-                ? 'symbol_active'
-                : 'symbol_active symbol_wrong'
-              : id < currentIndex
-              ? 'symbol_correct'
-              : ''
-          }>
-          {symbol}
-        </span>
-      ))}
-    </p>
+    <div className="typing-test__text">
+      {!isLoading
+        ? text.split('').map((symbol, id) => (
+            <span
+              key={id}
+              className={
+                id === currentIndex
+                  ? isCorrect
+                    ? 'symbol_active'
+                    : 'symbol_active symbol_wrong'
+                  : id < currentIndex
+                  ? 'symbol_correct'
+                  : ''
+              }>
+              {symbol}
+            </span>
+          ))
+        : 'Загрузка текста...'}
+    </div>
   );
 };
 
