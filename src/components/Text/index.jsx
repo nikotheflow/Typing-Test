@@ -74,10 +74,10 @@ const Text = () => {
               className={
                 id === currentIndex
                   ? isCorrect
-                    ? 'symbol_active'
-                    : 'symbol_active symbol_wrong'
+                    ? 'typing-test__symbol_active'
+                    : 'typing-test__symbol_active typing-test__symbol_wrong'
                   : id < currentIndex
-                  ? 'symbol_correct'
+                  ? 'typing-test__symbol_correct'
                   : ''
               }>
               {symbol}

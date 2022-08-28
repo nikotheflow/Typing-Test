@@ -19,8 +19,8 @@ function App() {
   };
 
   return (
-    <div className="wrapper-outer">
-      <div className="typing-test wrapper-inner">
+    <div className="wrapper">
+      <div className="typing-test">
         <div className="typing-test__header">
           <h2 className="typing-test__title">Тест скорости печати</h2>
           <p className="typing-test__subtitle">
